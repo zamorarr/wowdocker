@@ -1,13 +1,10 @@
-# This uses version 1 of docker-compose
 dolo:
   build: downloader/
-  environment:
-    - BLIZZARD_API_KEY=${BLIZZARD_API_KEY}
+  env_file:
+    - download.env
 yolo:
   build: uploader/ 
-  environment:
-    - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-    - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-    - S3BUCKET=${S3BUCKET}
+  env_file:
+    - upload.env
   volumes_from:
     - dolo
