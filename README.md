@@ -2,7 +2,12 @@
 
 This is a set of docker containers to use Blizzard's API to download Auction data from user-specified realms and upload them to a specified s3 bucket. This application uses docker-compose to manage the uploader and downloader. It expects that your host has the following environment variables defined:
 
+In upload.env
+
 - **BLIZZARD_API_KEY** your Blizzard API key. Obtain from dev.battle.net
+
+In download.env
+
 - **AWS_ACCESS_KEY_ID** your AWS access key
 - **AWS_SECRET_ACCESS_KEY** your AWS secret access key.
 - **S3BUCKET** the name of the s3 bucket to upload auction data to. Do not prepend with s3://
