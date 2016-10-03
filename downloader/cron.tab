@@ -1,0 +1,2 @@
+0 0 * * * source /home/docker/myenv.env ; /home/docker/api.sh Dalaran Kalecgos
+

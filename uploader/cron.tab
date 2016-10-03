@@ -1,0 +1,2 @@
+5 0 * * * source /home/docker/myenv.env ; /home/docker/s3.sh 
+
