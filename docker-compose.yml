@@ -1,10 +1,10 @@
 dolo:
   build: downloader/
   env_file:
-    - download.env
+    - downloader/download.env
 yolo:
   build: uploader/ 
   env_file:
-    - upload.env
+    - uploader/upload.env
   volumes_from:
     - dolo

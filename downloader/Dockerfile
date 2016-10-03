@@ -15,12 +15,9 @@ WORKDIR /home/docker
 ADD api.sh api.sh
 ADD cron.tab cron.tab
 
-# Save env for cron
-RUN env > myenv.env
-
 # Make Volume available
 VOLUME /home/docker/data
 
 # Run Cronjob
 RUN crontab cron.tab
-CMD [ "crond", "-fS", "-l", "2"] 
+CMD env > myenv.env && crond -fS -l 2 

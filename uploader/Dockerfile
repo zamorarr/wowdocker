@@ -16,9 +16,6 @@ WORKDIR /home/docker
 ADD s3.sh s3.sh
 ADD cron.tab cron.tab
 
-# Save env for cron
-RUN env > myenv.env
-
 # Run Cronjob
 RUN crontab cron.tab
-CMD [ "crond", "-fS", "-l", "2" ]
+CMD env > myenv.env && crond -fS -l 2
